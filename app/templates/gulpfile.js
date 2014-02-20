@@ -1,5 +1,6 @@
 // For all available options, see node_modules/pho-dev-stack/config.js
-require('pho-dev-stack')({
+var gulp = require('gulp');
+require('pho-dev-stack')(gulp, {
   dist: {
     markupDir: 'dist/',
     scriptDir: 'dist/scripts/',
