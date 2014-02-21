@@ -17,7 +17,7 @@ require('pho-dev-stack')(gulp, {
     styleMain: 'main.less',
     scriptFiles: '**/*.js',
     styleFiles: '**/*.less'
-  },
+  }
 });
 
 // If needed, redefine tasks here
