@@ -44,6 +44,7 @@ SourceGenerator.prototype.projectfiles = function projectfiles() {
 
   this.copy('bowerrc', '.bowerrc');
   this.copy('editorconfig', '.editorconfig');
+  this.copy('karma.conf.js', 'karma.conf.js');
   this.copy('jshintrc', '.jshintrc');
   this.copy('_bower.json', 'bower.json');
   this.copy('gulpfile.js', 'gulpfile.js');
