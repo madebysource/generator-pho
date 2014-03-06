@@ -4,6 +4,9 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
 
     files: [
+      'src/bower_components/angular/angular.js',
+      'dist/scripts/*.js',
+
       'spec/exampleSpec.js'
     ],
 
