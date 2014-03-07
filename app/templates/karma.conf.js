@@ -7,7 +7,7 @@ module.exports = function(config) {
       'src/bower_components/angular/angular.js',
       'dist/scripts/*.js',
 
-      'spec/exampleSpec.js'
+      'spec/unit/exampleSpec.js'
     ],
 
     exclude: [
