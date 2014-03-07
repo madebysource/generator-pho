@@ -28,12 +28,15 @@ describe('pho generator', function () {
             'bower.json',
             'gulpfile.js',
             'package.json',
+            'karma.conf.js',
             'dist/',
             'src/index.html',
             'src/scripts/main.js',
             'src/scripts/home/index.js',
             'src/scripts/home/HomeCtrl.js',
-            'src/styles/main.less'
+            'src/styles/main.less',
+            'spec/integration/example.js',
+            'spec/unit/exampleSpec.js'
         ];
 
         helpers.mockPrompt(this.app, {
