@@ -1,3 +1,3 @@
 angular.module('app', [
-	require('./home').name
+  require('./home').name
 ]);
