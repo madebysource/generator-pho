@@ -39,6 +39,7 @@ SourceGenerator.prototype.askFor = function askFor() {
 
 SourceGenerator.prototype.projectfiles = function projectfiles() {
   this.mkdir('src');
+  this.mkdir('src/images');
   this.mkdir('dist');
   this.mkdir('spec');
   this.mkdir('spec/e2e');

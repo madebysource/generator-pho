@@ -13,13 +13,15 @@ require('pho-dev-stack')(gulp, {
     scriptDir: 'src/scripts/',
     styleDir: 'src/styles/',
     specDir: 'spec/',
+    imageDir: 'src/images/',
     e2eDir: 'integration/',
     markupMain: 'index.html',
     scriptMain: 'main.js',
     styleMain: 'main.less',
     scriptFiles: '**/*.js',
     styleFiles: '**/*.less',
-    specFiles: '**/*Spec.js'
+    specFiles: '**/*Spec.js',
+    imageFiles: '**/*.{png,jpg,jpeg}'
   }
 });
 
