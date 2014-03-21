@@ -13,7 +13,7 @@ require('pho-dev-stack')(gulp, {
     scriptDir: 'src/scripts/',
     styleDir: 'src/styles/',
     specDir: 'spec/',
-    integrationDir: 'integration/',
+    e2eDir: 'integration/',
     markupMain: 'index.html',
     scriptMain: 'main.js',
     styleMain: 'main.less',
