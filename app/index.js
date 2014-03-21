@@ -57,5 +57,5 @@ SourceGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('src/scripts/home/HomeCtrl.js', 'src/scripts/home/HomeCtrl.js');
   this.copy('src/styles/main.less', 'src/styles/main.less');
   this.copy('spec/unit/exampleSpec.js', 'spec/unit/exampleSpec.js');
-  this.copy('spec/e2e/example.js', 'spec/integration/example.js');
+  this.copy('spec/e2e/example.js', 'spec/e2e/example.js');
 };
