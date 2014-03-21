@@ -6,7 +6,7 @@ A generator for [Yeoman](http://yeoman.io).
 To install generator-pho from npm, run:
 
 ```
-$ npm install -g yo generator-pho gulp
+$ npm install -g yo madebysource/generator-pho gulp
 ```
 
 Finally, initiate the generator:
