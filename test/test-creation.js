@@ -35,7 +35,7 @@ describe('pho generator', function () {
       'src/scripts/home/index.js',
       'src/scripts/home/HomeCtrl.js',
       'src/styles/main.less',
-      'spec/integration/example.js',
+      'spec/e2e/example.js',
       'spec/unit/exampleSpec.js'
     ];
 
