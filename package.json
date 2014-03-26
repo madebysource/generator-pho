@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "A generator for Yeoman",
   "homepage": "https://github.com/madebysource/generator-pho",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/madebysource/generator-pho"
+  },
   "bugs": "https://github.com/madebysource/generator-pho/issues",
   "keywords": [
     "yeoman-generator",
@@ -23,8 +27,8 @@
     "jasmine",
     "lint"
   ],
+  "author": "Pavel Gavlík <pavelgavlik@abdoc.net>",
   "contributors": [
-    "Pavel Gavlík <pavelgavlik@abdoc.net>",
     "Petr Brzek <petrbrzek@abdoc.net>",
     "Jan Šedivý <jansedivy@abdoc.net>"
   ],
@@ -46,8 +50,7 @@
     "yo": ">=1.0.0"
   },
   "engines": {
-    "node": ">=0.8.0",
-    "npm": ">=1.2.10"
+    "node": ">=0.10.0"
   },
-  "licenses": "MIT"
+  "license": "MIT"
 }
