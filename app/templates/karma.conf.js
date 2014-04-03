@@ -13,6 +13,8 @@ module.exports = function(config) {
     exclude: [
     ],
 
+    reportSlowerThan: 500,
+
     reporters: ['mocha'],
     port: 9876,
     colors: true,
