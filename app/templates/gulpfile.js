@@ -14,7 +14,7 @@ require('pho-dev-stack')(gulp, {
     styleDir: 'src/styles/',
     specDir: 'spec/',
     imageDir: 'src/images/',
-    e2eDir: 'integration/',
+    e2eDir: 'e2e/',
     markupMain: 'index.html',
     scriptMain: 'main.js',
     styleMain: 'main.less',
