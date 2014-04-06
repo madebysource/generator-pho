@@ -22,7 +22,15 @@ require('pho-dev-stack')(gulp, {
     styleFiles: '**/*.less',
     specFiles: '**/*Spec.js',
     imageFiles: '**/*.{png,jpg,jpeg}'
-  }
+  },
+  env: {
+    development: {
+      imagemin: false,
+      ngmin: false,
+      uglify: false,
+      htmlmin: false
+    }
+  },
 });
 
 // If needed, redefine tasks here
