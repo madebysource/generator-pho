@@ -15,6 +15,6 @@
   "dependencies": {},
   "devDependencies": {
     "gulp": "~3.5.1",
-    "pho-dev-stack": "madebysource/pho-dev-stack"
+    "pho-devstack": "~0.1.0"
   }
 }
