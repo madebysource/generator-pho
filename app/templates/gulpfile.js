@@ -1,6 +1,6 @@
 // For all available options, see node_modules/pho-dev-stack/config.js
 var gulp = require('gulp');
-require('pho-dev-stack')(gulp, {
+require('pho-devstack')(gulp, {
   dist: {
     markupDir: 'dist/',
     scriptDir: 'dist/scripts/',
@@ -22,15 +22,7 @@ require('pho-dev-stack')(gulp, {
     styleFiles: '**/*.less',
     specFiles: '**/*Spec.js',
     imageFiles: '**/*.{png,jpg,jpeg}'
-  },
-  env: {
-    development: {
-      imagemin: false,
-      ngmin: false,
-      uglify: false,
-      htmlmin: false
-    }
-  },
+  }
 });
 
 // If needed, redefine tasks here
