@@ -9,17 +9,6 @@
   },
   "bugs": "https://github.com/madebysource/generator-pho/issues",
   "keywords": [
-    "yeoman-generator",
-    "scaffold",
-    "web",
-    "app",
-    "front-end",
-    "gulp",
-    "browserify",
-    "less",
-    "css",
-    "lesshat",
-    "angular"
   ],
   "futureKeywords": [
     "tdd",
