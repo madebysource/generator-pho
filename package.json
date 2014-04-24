@@ -1,6 +1,6 @@
 {
   "name": "generator-pho",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A generator for Yeoman",
   "homepage": "https://github.com/madebysource/generator-pho",
   "repository": {
