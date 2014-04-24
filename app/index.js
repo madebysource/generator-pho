@@ -55,7 +55,7 @@ SourceGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('_package.json', 'package.json');
   this.copy('src/index.html', 'src/index.html');
   this.copy('src/partials/empty.txt', 'src/partials/empty.txt');
-  this.copy('src/partials/livereload.html', 'src/partials/livereload.html');
+  this.copy('src/partials/livereload.txt', 'src/partials/livereload.txt');
   this.copy('src/scripts/main.js', 'src/scripts/main.js');
   this.copy('src/scripts/home/index.js', 'src/scripts/home/index.js');
   this.copy('src/scripts/home/HomeCtrl.js', 'src/scripts/home/HomeCtrl.js');

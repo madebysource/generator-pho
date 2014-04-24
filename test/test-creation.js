@@ -32,7 +32,7 @@ describe('pho generator', function () {
       'dist/',
       'src/index.html',
       'src/partials/empty.txt',
-      'src/partials/livereload.html',
+      'src/partials/livereload.txt',
       'src/scripts/main.js',
       'src/scripts/home/index.js',
       'src/scripts/home/HomeCtrl.js',

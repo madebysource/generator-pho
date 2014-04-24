@@ -4,7 +4,7 @@ var gulp = require('gulp');
 require('pho-devstack')(gulp, {
   fileInsert: {
     enabled: true,
-    '%% LIVERELOAD %%': 'src/partials/livereload.html'
+    '%% LIVERELOAD %%': 'src/partials/livereload.txt'
   }
 });
 
