@@ -51,8 +51,11 @@ SourceGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('jshintrc', '.jshintrc');
   this.copy('_bower.json', 'bower.json');
   this.copy('gulpfile.js', 'gulpfile.js');
+  this.copy('gulpfile-production.js', 'gulpfile-production.js');
   this.copy('_package.json', 'package.json');
   this.copy('src/index.html', 'src/index.html');
+  this.copy('src/partials/empty.txt', 'src/partials/empty.txt');
+  this.copy('src/partials/livereload.html', 'src/partials/livereload.html');
   this.copy('src/scripts/main.js', 'src/scripts/main.js');
   this.copy('src/scripts/home/index.js', 'src/scripts/home/index.js');
   this.copy('src/scripts/home/HomeCtrl.js', 'src/scripts/home/HomeCtrl.js');
