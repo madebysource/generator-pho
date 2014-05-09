@@ -5,7 +5,8 @@ require('pho-devstack')(gulp, {
   fileInsert: {
     enabled: true,
     '%% LIVERELOAD %%': 'src/partials/livereload.txt'
-  }
+  },
+  copy: ['sprites/**/*']
 });
 
 // If needed, redefine tasks here
