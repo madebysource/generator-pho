@@ -23,8 +23,9 @@ describe('pho generator', function () {
     var expected = [
       // add files you expect to exist here.
       '.bowerrc',
-      '.jshintrc',
       '.editorconfig',
+      '.gitignore',
+      '.jshintrc',
       'bower.json',
       'gulpfile.js',
       'package.json',

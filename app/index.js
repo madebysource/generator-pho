@@ -45,7 +45,8 @@ SourceGenerator.prototype.projectfiles = function projectfiles() {
   this.mkdir('spec/e2e');
   this.mkdir('spec/unit');
 
-  this.copy('bowerrc', '.bowerrc');
+  this.copy('bowerrc', '.bowerrc')
+  this.copy('gitignore', '.gitignore');;
   this.copy('editorconfig', '.editorconfig');
   this.copy('karma.conf.js', 'karma.conf.js');
   this.copy('jshintrc', '.jshintrc');
