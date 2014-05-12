@@ -1,24 +1,19 @@
+# generator-pho [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]
+
 ## Status
 This is software is under development. Use it at your own risk and expect some breaking changes. There will be no documentation before 1.0, just installation instructions.
 
-# generator-pho [![Build Status](https://secure.travis-ci.org/madebysource/generator-pho.png?branch=master)](https://travis-ci.org/madebysource/generator-pho)
+## Installation
 
-A generator for [Yeoman](http://yeoman.io).
-
-
-To install generator-pho from npm, run:
-
-```
-$ npm install -g bower yo generator-pho gulp
-```
-
-Finally, initiate the generator:
-
-```
-$ yo pho
-```
+See installation instructions at [pho-devstack repo](https://github.com/madebysource/pho-devstack#installation).
 
 
 ## License
 
 [MIT license](http://opensource.org/licenses/mit-license.php)
+
+[npm-url]: https://npmjs.org/package/generator-pho
+[npm-image]: https://badge.fury.io/js/generator-pho.png
+
+[travis-url]: https://travis-ci.org/madebysource/generator-pho
+[travis-image]: https://secure.travis-ci.org/madebysource/generator-pho.png?branch=master

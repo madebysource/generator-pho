@@ -27,6 +27,12 @@ require('pho-devstack')(gulp, {
   },
   watch: {
     enabled: false
+  },
+  'sprites-preprocessor': {
+    enabled: true
+  },
+  base64: {
+    enabled: true
   }
 });
 
