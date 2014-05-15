@@ -1,19 +1,15 @@
 <html>
 <head>
   <title><%= _.slugify(appname) %></title>
-  <!-- inject:css -->
-  <!-- CSS build will go here as <link rel="stylesheet" href="FILE"> -->
-  <!-- endinject -->
+  <!-- substitute:css -->
 </head>
 <body ng-app="app" ng-controller="HomeCtrl">
   <h1><%= _.slugify(appname) %> v{{version}}</h1>
   <p>Welcome to your app!</p>
   <p>We know you have things to do, so we won't bother you with too much generated code. Happy coding ;-)</p>
 
-  %% LIVERELOAD %%
+  <!-- substitute:livereload -->
   <script type="text/javascript" src="../src/bower_components/angular/angular.min.js"></script>
-  <!-- inject:js -->
-  <!-- JS build will go here as: <script src="FILE"></script> -->
-  <!-- endinject -->
+  <!-- substitute:js -->
 </body>
 </html>
