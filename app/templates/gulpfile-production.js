@@ -5,11 +5,13 @@ var through = require('through2');
 
 // get stream of filenames in directory
 var files = function(path, format) {
-  return gulp.src(path, { read: false })
+  return function() {
+    return gulp.src(path, { read: false })
     .pipe(through.obj(function(file, enc, callback) {
       this.push(format(file.relative));
       callback();
     }));
+  };
 };
 
 require('pho-devstack')(gulp, {
