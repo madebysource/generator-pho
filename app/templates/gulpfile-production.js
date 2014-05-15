@@ -20,10 +20,6 @@ require('pho-devstack')(gulp, {
       uglifyify: true
     }
   },
-  fileInsert: {
-    enabled: true,
-    '%% LIVERELOAD %%': 'src/partials/empty.txt'
-  },
   less: {
     sourceMap: false
   },
