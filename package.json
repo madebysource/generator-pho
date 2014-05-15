@@ -22,10 +22,6 @@
     "Jan Šedivý <jansedivy@abdoc.net>"
   ],
   "main": "app/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/madebysource/generator-pho.git"
-  },
   "scripts": {
     "test": "mocha"
   },
