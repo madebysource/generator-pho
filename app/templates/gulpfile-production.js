@@ -2,6 +2,12 @@
 // These are production build settings, see gulpfile.js for development settings
 var gulp = require('gulp');
 
+var extend = require('node.extend');
+var substituteConfig = require('./substitute-config');
+
+var substituter = extend(true, {}, substituteConfig, {
+});
+
 require('pho-devstack')(gulp, {
   browserify: {
     debug: false,
@@ -33,8 +39,7 @@ require('pho-devstack')(gulp, {
     enabled: true,
     // baseDir: 'src' // uncomment if you are using absolute paths
   },
-  substituter: {
-  }
+  substituter: substituter
 });
 
 // If needed, redefine tasks here
