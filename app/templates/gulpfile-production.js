@@ -33,12 +33,8 @@ require('pho-devstack')(gulp, {
     enabled: true,
     // baseDir: 'src' // uncomment if you are using absolute paths
   },
-
   substituter: {
-    livereload: function() {
-      return gulp.src('src/partials/livereload.txt');
-    }
-  },
+  }
 });
 
 // If needed, redefine tasks here
