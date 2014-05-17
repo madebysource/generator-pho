@@ -1,4 +1,4 @@
-module.exports = {<% if (analytics) { %>
+module.exports = {<% if (metatags) { %><% if (analytics) { %>
   analytics: '<%= analytics %>',
 <% } %>
   description: '',
@@ -16,4 +16,4 @@ module.exports = {<% if (analytics) { %>
   'twitter:card': '',
   'twitter:site': '',
   'twitter:creator': ''
-};
+<% } %>};
