@@ -5,14 +5,12 @@ var gulp = require('gulp');
 var extend = require('node.extend');
 var substituteConfig = require('./substitute-config');
 
-var substituter = extend(true, {}, substituteConfig, {
-  livereload: function() {
-    return "<script>document.write('<script src=\"http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1\"></' + 'script>')</script>";
-  }
-});
-
 require('pho-devstack')(gulp, {
-  substituter: substituter,
+  substituter: extend(true, substituteConfig, {
+    livereload: function() {
+      return "<script>document.write('<script src=\"http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1\"></' + 'script>')</script>";
+    }
+  }),
 
   copy: ['sprites/**/*']
 });
