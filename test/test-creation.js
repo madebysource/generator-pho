@@ -41,7 +41,10 @@ describe('pho generator', function () {
     ];
 
     helpers.mockPrompt(this.app, {
-      'someOption': true
+      'tests': true,
+      'e2e': true,
+      'unit': true,
+      'angular': true
     });
     this.app.options['skip-install'] = true;
     this.app.run({}, function () {
