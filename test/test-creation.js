@@ -32,8 +32,6 @@ describe('pho generator', function () {
       'karma.conf.js',
       'dist/',
       'src/index.html',
-      'src/partials/empty.txt',
-      'src/partials/livereload.txt',
       'src/scripts/main.js',
       'src/scripts/home/index.js',
       'src/scripts/home/HomeCtrl.js',
