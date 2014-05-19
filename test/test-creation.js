@@ -31,14 +31,18 @@ describe('pho generator', function () {
       'gulpfile-production.js',
       'package.json',
       'karma.conf.js',
-      'dist/',
       'src/index.html',
       'src/scripts/main.js',
       'src/scripts/home/index.js',
       'src/scripts/home/HomeCtrl.js',
       'src/styles/main.less',
       'spec/e2e/example.js',
-      'spec/unit/exampleSpec.js'
+      'spec/unit/exampleSpec.js',
+
+      'dist/',
+      'src/',
+      'src/images',
+      'src/sprites'
     ];
 
     helpers.mockPrompt(this.app, {
@@ -47,7 +51,9 @@ describe('pho generator', function () {
       'unit': true,
       'angular': true
     });
+
     this.app.options['skip-install'] = true;
+
     this.app.run({}, function () {
       helpers.assertFile(expected);
       done();

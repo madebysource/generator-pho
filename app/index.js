@@ -117,19 +117,17 @@ var Generator = yeoman.generators.Base.extend({
   },
 
   app: function() {
-    this.mkdir('src');
     this.mkdir('src/images');
     this.mkdir('src/sprites');
+    this.mkdir('dist');
 
     this.copy('src/styles/main.less', 'src/styles/main.less');
     this.copy('src/scripts/main.js', 'src/scripts/main.js');
 
-    this.template('src/index.html', 'src/index.html');
-
-    this.mkdir('dist');
-
     this.copy('gulpfile.js', 'gulpfile.js');
     this.copy('gulpfile-production.js', 'gulpfile-production.js');
+
+    this.template('src/index.html', 'src/index.html');
 
     if (this.angular) {
       this.copy('src/scripts/home/index.js', 'src/scripts/home/index.js');
