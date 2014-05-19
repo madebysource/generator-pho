@@ -47,9 +47,9 @@ SourceGenerator.prototype.askForMetatags = function() {
       message: 'metatags'
     },
     {
-      type: 'input',
+      type: 'confirm',
       name: 'analytics',
-      message: 'google analytics (UA-XXXXX-X)'
+      message: 'google analytics'
     }
   ];
 

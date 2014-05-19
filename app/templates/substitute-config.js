@@ -1,5 +1,5 @@
 module.exports = {<% if (metatags) { %><% if (analytics) { %>
-  analytics: '<%= analytics %>',
+  analytics: 'UA-XXXXX-X',
 <% } %>
   description: '',
   author: '',
