@@ -28,6 +28,7 @@ describe('pho generator', function () {
       '.jshintrc',
       'bower.json',
       'gulpfile.js',
+      'gulpfile-production.js',
       'package.json',
       'karma.conf.js',
       'dist/',
