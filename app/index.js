@@ -1,7 +1,7 @@
 'use strict';
 var yeoman = require('yeoman-generator');
 
-module.exports = yeoman.generators.Base.extend({
+var Generator = yeoman.generators.Base.extend({
   constructor: function(args, options) {
     yeoman.generators.Base.apply(this, arguments);
 
@@ -155,3 +155,6 @@ module.exports = yeoman.generators.Base.extend({
     }
   }
 });
+
+module.exports = Generator;
+
