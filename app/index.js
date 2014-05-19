@@ -14,7 +14,7 @@ module.exports = yeoman.generators.Base.extend({
     });
   },
 
-  askFor: function() {
+  askForApplicationType: function() {
     var cb = this.async();
 
     var prompts = [
