@@ -6,6 +6,14 @@ var extend = require('node.extend');
 var substituteConfig = require('./substitute-config');
 
 require('pho-devstack')(gulp, {
+  htmlmin: {
+    enabled: false
+  },
+
+  imagemin: {
+    enabled: false
+  },
+
   substituter: extend(true, substituteConfig, {
     livereload: function() {
       return "<script>document.write('<script src=\"http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1\"></' + 'script>')</script>";
