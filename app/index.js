@@ -106,12 +106,38 @@ module.exports = yeoman.generators.Base.extend({
     }.bind(this));
   },
 
-  projectfiles: function() {
+  projectFiles: function() {
+    this.copy('bowerrc', '.bowerrc');
+    this.copy('gitignore', '.gitignore');
+    this.copy('editorconfig', '.editorconfig');
+    this.copy('jshintrc', '.jshintrc');
+    this.copy('_bower.json', 'bower.json');
+    this.copy('substitute-config.js', 'substitute-config.js');
+    this.copy('_package.json', 'package.json');
+  },
+
+  app: function() {
     this.mkdir('src');
     this.mkdir('src/images');
     this.mkdir('src/sprites');
+
+    this.copy('src/styles/main.less', 'src/styles/main.less');
+    this.copy('src/scripts/main.js', 'src/scripts/main.js');
+
+    this.template('src/index.html', 'src/index.html');
+
     this.mkdir('dist');
 
+    this.copy('gulpfile.js', 'gulpfile.js');
+    this.copy('gulpfile-production.js', 'gulpfile-production.js');
+
+    if (this.angular) {
+      this.copy('src/scripts/home/index.js', 'src/scripts/home/index.js');
+      this.copy('src/scripts/home/HomeCtrl.js', 'src/scripts/home/HomeCtrl.js');
+    }
+  },
+
+  tests: function() {
     if (this.e2e || this.unit) {
       this.mkdir('spec');
 
@@ -126,26 +152,6 @@ module.exports = yeoman.generators.Base.extend({
         this.mkdir('spec/unit');
         this.copy('spec/unit/exampleSpec.js', 'spec/unit/exampleSpec.js');
       }
-    }
-
-    this.copy('bowerrc', '.bowerrc');
-    this.copy('gitignore', '.gitignore');
-    this.copy('editorconfig', '.editorconfig');
-    this.copy('jshintrc', '.jshintrc');
-    this.copy('_bower.json', 'bower.json');
-    this.copy('gulpfile.js', 'gulpfile.js');
-    this.copy('gulpfile-production.js', 'gulpfile-production.js');
-    this.copy('substitute-config.js', 'substitute-config.js');
-    this.copy('_package.json', 'package.json');
-
-    this.template('src/index.html', 'src/index.html');
-
-    this.copy('src/styles/main.less', 'src/styles/main.less');
-    this.copy('src/scripts/main.js', 'src/scripts/main.js');
-
-    if (this.angular) {
-      this.copy('src/scripts/home/index.js', 'src/scripts/home/index.js');
-      this.copy('src/scripts/home/HomeCtrl.js', 'src/scripts/home/HomeCtrl.js');
     }
   }
 });
