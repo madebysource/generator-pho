@@ -9,12 +9,15 @@
   },
   "bugs": "https://github.com/madebysource/generator-pho/issues",
   "keywords": [
-  ],
-  "futureKeywords": [
+    "jasmine",
+    "lint",
+    "app",
+    "angular",
+    "front-end",
+    "scaffold",
     "tdd",
     "testing",
-    "jasmine",
-    "lint"
+    "yeoman-generator"
   ],
   "author": "Pavel Gavlík <pavelgavlik@abdoc.net>",
   "contributors": [
