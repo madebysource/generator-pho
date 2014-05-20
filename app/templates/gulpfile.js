@@ -6,10 +6,6 @@ var extend = require('node.extend');
 var substituteConfig = require('./substitute-config');
 
 require('pho-devstack')(gulp, {
-  htmlmin: {
-    enabled: false
-  },
-
   imagemin: {
     enabled: false
   },
