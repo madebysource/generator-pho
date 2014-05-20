@@ -46,12 +46,18 @@ var Generator = yeoman.generators.Base.extend({
         type: 'confirm',
         name: 'analytics',
         message: 'google analytics'
+      },
+      {
+        type: 'confirm',
+        name: 'baseStyleStructure',
+        message: 'generate base less strucure'
       }
     ];
 
     this.prompt(prompts, function(props) {
       this.metatags = props.metatags;
       this.analytics = props.analytics;
+      this.baseStyleStructure = props.baseStyleStructure;
 
       cb();
     }.bind(this));
@@ -122,7 +128,6 @@ var Generator = yeoman.generators.Base.extend({
     this.mkdir('src/sprites');
     this.mkdir('dist');
 
-    this.copy('src/styles/main.less', 'src/styles/main.less');
     this.copy('src/scripts/main.js', 'src/scripts/main.js');
 
     this.copy('gulpfile.js', 'gulpfile.js');
@@ -133,6 +138,24 @@ var Generator = yeoman.generators.Base.extend({
     if (this.angular) {
       this.copy('src/scripts/home/index.js', 'src/scripts/home/index.js');
       this.copy('src/scripts/home/HomeCtrl.js', 'src/scripts/home/HomeCtrl.js');
+    }
+  },
+
+  styles: function() {
+    this.copy('src/styles/main.less', 'src/styles/main.less');
+
+    if (this.baseStyleStructure) {
+      this.copy('src/styles/base/fonts.less', 'src/styles/base/fonts.less');
+      this.copy('src/styles/base/global.less', 'src/styles/base/global.less');
+      this.copy('src/styles/base/links.less', 'src/styles/base/links.less');
+      this.copy('src/styles/base/normalize.less', 'src/styles/base/normalize.less');
+      this.copy('src/styles/components/column.less', 'src/styles/components/column.less');
+      this.copy('src/styles/components/component.less', 'src/styles/components/component.less');
+      this.copy('src/styles/modules/module.less', 'src/styles/modules/module.less');
+      this.copy('src/styles/animations.less', 'src/styles/animations.less');
+      this.copy('src/styles/helpers.less', 'src/styles/helpers.less');
+      this.copy('src/styles/lesshat.less', 'src/styles/lesshat.less');
+      this.copy('src/styles/main.less', 'src/styles/main.less');
     }
   },
 
