@@ -27,6 +27,7 @@ describe('pho generator', function () {
       '.gitignore',
       '.jshintrc',
       'bower.json',
+      'humans.txt',
       'gulpfile.js',
       'gulpfile-production.js',
       'package.json',
