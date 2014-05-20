@@ -37,6 +37,7 @@ require('pho-devstack')(gulp, {
     // baseDir: 'src' // uncomment if you are using absolute paths
   },
   substituter: extend(true, substituteConfig, {
+    // cdn: 'http://example.com' // url to your cdn server
   })
 });
 
