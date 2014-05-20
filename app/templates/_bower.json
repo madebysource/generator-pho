@@ -1,8 +1,8 @@
 {
   "name": "package",
   "version": "0.0.0",
-  "dependencies": {
-    "angular": "~1.2.9",
+  "dependencies": {<% if (angular) { %>
+    "angular": "~1.2.9",<% } %>
     "lesshat": "~3.0.0"
   }
 }

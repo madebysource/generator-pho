@@ -1,5 +1,49 @@
-// import LESS Hat mixins library
-// see https://github.com/csshat/lesshat/blob/master/README.md
-// for list of mixins with examples
-@import "lesshat";
+<% if (baseStyleStructure) { %>
+/*
+ * main.less
+ *  - This file includes all your components and modules. It shouldn’t contain any
+ *    CSS rules.
+ *  - Based on ’SMACSS’ (Scalable and Modular Architecture for CSS). Read more at
+ *    [http://smacss.com/]
+ *
+ *  - Base:
+ *    - reset
+ *
+ *  - Component:
+ *    - main idea: component is a reusable page element
+ *    - all your buttons, form inputs,…
+ *
+ *  - Module:
+ *    - bigger page block, *uses components*, *defines the final component layout*,
+ *      *not always* reusable
+ *    - footer, header, user profile,…
+ */
 
+
+/*
+ * Import Less Hat mixin library
+ */
+@import "lesshat";
+@import "helpers";
+
+
+/*
+ * Base
+ */
+@import "base/normalize";
+@import "base/global";
+@import "base/fonts";
+@import "base/links";
+
+
+/*
+ * Components
+ */
+@import "components/column";
+
+
+/*
+ * Modules
+ */
+@import "modules/module";
+<% } %>

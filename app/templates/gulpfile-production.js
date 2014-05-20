@@ -2,6 +2,9 @@
 // These are production build settings, see gulpfile.js for development settings
 var gulp = require('gulp');
 
+var extend = require('node.extend');
+var substituteConfig = require('./substitute-config');
+
 require('pho-devstack')(gulp, {
   browserify: {
     debug: false,
@@ -25,7 +28,7 @@ require('pho-devstack')(gulp, {
   watch: {
     enabled: false
   },
-  'sprites-preprocessor': {
+  spritesPreprocessor: {
     enabled: true,
     prefix: '../sprites/' // change this to prefix path before sprites. '/sprites/' for absolute paths
   },
@@ -33,12 +36,9 @@ require('pho-devstack')(gulp, {
     enabled: true,
     // baseDir: 'src' // uncomment if you are using absolute paths
   },
-
-  substituter: {
-    livereload: function() {
-      return gulp.src('src/partials/livereload.txt');
-    }
-  },
+  substituter: extend(true, substituteConfig, {
+    // cdn: 'http://example.com' // url to your cdn server
+  })
 });
 
 // If needed, redefine tasks here

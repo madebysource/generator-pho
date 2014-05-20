@@ -27,27 +27,36 @@ describe('pho generator', function () {
       '.gitignore',
       '.jshintrc',
       'bower.json',
+      'humans.txt',
       'gulpfile.js',
+      'gulpfile-production.js',
       'package.json',
       'karma.conf.js',
-      'dist/',
       'src/index.html',
-      'src/partials/empty.txt',
-      'src/partials/livereload.txt',
       'src/scripts/main.js',
       'src/scripts/home/index.js',
       'src/scripts/home/HomeCtrl.js',
       'src/styles/main.less',
       'spec/e2e/example.js',
-      'spec/unit/exampleSpec.js'
+      'spec/unit/exampleSpec.js',
+
+      'dist/',
+      'src/',
+      'src/images',
+      'src/sprites'
     ];
 
     helpers.mockPrompt(this.app, {
-      'someOption': true
+      'tests': true,
+      'e2e': true,
+      'unit': true,
+      'angular': true
     });
+
     this.app.options['skip-install'] = true;
+
     this.app.run({}, function () {
-      helpers.assertFiles(expected);
+      helpers.assertFile(expected);
       done();
     });
   });

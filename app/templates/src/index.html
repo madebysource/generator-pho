@@ -1,15 +1,46 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <title><%= _.slugify(appname) %></title>
+  <meta charset="utf-8">
+  <title><%= _.slugify(appname) %></title><% if (metatags) { %>
+  <meta name="description" content="<!-- substitute:description -->">
+  <meta name="author" content="<!-- substitute:author -->">
+  <meta name="keywords" content="<!-- substitute:keywords -->">
+
+  <meta name="og:description" content="<!-- substitute:description -->">
+  <meta name="og:url" content="<!-- substitute:og:url -->">
+  <meta name="og:image" content="<!-- substitute:og:image -->">
+  <meta name="og:type" content="<!-- substitute:og:type -->">
+  <meta name="og:site_name" content="<!-- substitute:og:site_name -->">
+
+  <meta name="twitter:title" content="<!-- substitute:twitter:title -->">
+  <meta name="twitter:description" content="<!-- substitute:description -->">
+  <meta name="twitter:url" content="<!-- substitute:twitter:url -->">
+  <meta name="twitter:image" content="<!-- substitute:twitter:image -->">
+  <meta name="twitter:card" content="<!-- substitute:twitter:card -->">
+  <meta name="twitter:site" content="<!-- substitute:twitter:site -->">
+  <meta name="twitter:creator" content="<!-- substitute:twitter:creator -->"><% } %>
+
   <!-- substitute:css -->
 </head>
-<body ng-app="app" ng-controller="HomeCtrl">
-  <h1><%= _.slugify(appname) %> v{{version}}</h1>
+<body<% if (angular) { %> ng-app="app" ng-controller="HomeCtrl"<% } %>>
+  <h1><%= _.slugify(appname) %><% if (angular) { %> v{{version}}<% } %></h1>
   <p>Welcome to your app!</p>
   <p>We know you have things to do, so we won't bother you with too much generated code. Happy coding ;-)</p>
 
-  <!-- substitute:livereload -->
+  <!-- substitute:livereload --><% if (angular) { %>
   <script type="text/javascript" src="../src/bower_components/angular/angular.min.js"></script>
+  <% } %>
   <!-- substitute:js -->
+<% if (analytics) { %>
+  <!-- Google Analytics -->
+  <script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','<!-- substitute:analytics -->');ga('send','pageview');
+  </script><% } %>
 </body>
 </html>
