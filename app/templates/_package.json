@@ -15,7 +15,7 @@
   "dependencies": {},
   "devDependencies": {
     "gulp": "~3.6.0",
-    "pho-devstack": "~0.3.0",
+    "pho-devstack": "~1.0.0-alpha.1",
     "node.extend": "~1.0.10"
   }
 }
