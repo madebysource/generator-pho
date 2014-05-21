@@ -124,8 +124,7 @@ var Generator = yeoman.generators.Base.extend({
   },
 
   app: function() {
-    this.mkdir('src/images');
-    this.mkdir('src/sprites');
+    this.mkdir('src/images/sprites');
     this.mkdir('dist');
 
     this.copy('src/scripts/main.js', 'src/scripts/main.js');

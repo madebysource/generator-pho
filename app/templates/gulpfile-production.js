@@ -30,7 +30,7 @@ require('pho-devstack')(gulp, {
   },
   spritesPreprocessor: {
     enabled: true,
-    prefix: '../sprites/' // change this to prefix path before sprites. '/sprites/' for absolute paths
+    prefix: '../images/sprites/' // change this to prefix path before sprites. '/images/sprites/' for absolute paths
   },
   base64: {
     enabled: true,

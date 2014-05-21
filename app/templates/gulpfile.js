@@ -16,7 +16,7 @@ require('pho-devstack')(gulp, {
     }
   }),
 
-  copy: ['sprites/**/*']
+  copy: ['images/sprites/**/*']
 });
 
 // If needed, redefine tasks here
