@@ -50,7 +50,7 @@ describe('pho generator', function () {
       'tests': true,
       'e2e': true,
       'unit': true,
-      'type': 'Web Application (angular)'
+      'type': 'Web Application'
     });
 
     this.app.options['skip-install'] = true;

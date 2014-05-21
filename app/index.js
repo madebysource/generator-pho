@@ -21,8 +21,8 @@ var Generator = yeoman.generators.Base.extend({
       {
         type: 'list',
         name: 'type',
-        message: 'type',
-        choices: ['Web Application (angular)', 'Landing page']
+        message: 'Select your project type:',
+        choices: ['Landing page', 'Web Application']
       }
     ];
 
@@ -40,17 +40,17 @@ var Generator = yeoman.generators.Base.extend({
       {
         type: 'confirm',
         name: 'metatags',
-        message: 'Generate metatags for social networks'
+        message: 'Should I generate meta tags for social networks?'
       },
       {
         type: 'confirm',
         name: 'analytics',
-        message: 'Google Analytics'
+        message: 'Do you want to include Google Analytics code?'
       },
       {
         type: 'confirm',
         name: 'baseStyleStructure',
-        message: 'Generate base Less structure'
+        message: 'Will you use LESS directory structure based on SMACSS?'
       }
     ];
 
@@ -70,18 +70,18 @@ var Generator = yeoman.generators.Base.extend({
 
     this.angular = false;
 
-    if (this.type === 'Web Application (angular)') {
+    if (this.type === 'Web Application') {
       this.angular = true;
       prompts = [
         {
           type: 'confirm',
           name: 'tests',
-          message: 'tests'
+          message: 'Do you want to include tests?'
         },
         {
           type: 'confirm',
           name: 'unit',
-          message: 'unit testing (jasmine)',
+          message: 'Should I set up unit testing with Jasmine?',
           when: function(props) {
             return props.tests;
           }
@@ -89,7 +89,7 @@ var Generator = yeoman.generators.Base.extend({
         {
           type: 'confirm',
           name: 'e2e',
-          message: 'end to end testing (casper.js)',
+          message: 'Will you use end to end testing (using CasperJS) as well?',
           when: function(props) {
             return props.tests;
           }
