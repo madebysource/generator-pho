@@ -22,7 +22,7 @@ var Generator = yeoman.generators.Base.extend({
         type: 'list',
         name: 'type',
         message: 'type',
-        choices: ['web app', 'landing page']
+        choices: ['Web Application (angular)', 'Landing page']
       }
     ];
 
@@ -40,17 +40,17 @@ var Generator = yeoman.generators.Base.extend({
       {
         type: 'confirm',
         name: 'metatags',
-        message: 'metatags'
+        message: 'Generate metatags for social networks'
       },
       {
         type: 'confirm',
         name: 'analytics',
-        message: 'google analytics'
+        message: 'Google Analytics'
       },
       {
         type: 'confirm',
         name: 'baseStyleStructure',
-        message: 'generate base less strucure'
+        message: 'Generate base Less structure'
       }
     ];
 
@@ -68,7 +68,7 @@ var Generator = yeoman.generators.Base.extend({
 
     var prompts = [];
 
-    if (this.type === 'web app') {
+    if (this.type === 'Web Application (angular)') {
       prompts = [
         {
           type: 'confirm',
@@ -94,7 +94,7 @@ var Generator = yeoman.generators.Base.extend({
         {
           type: 'confirm',
           name: 'e2e',
-          message: 'e2e testing (casper.js)',
+          message: 'end to end testing (casper.js)',
           when: function(props) {
             return props.tests;
           }
