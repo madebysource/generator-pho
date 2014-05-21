@@ -43,7 +43,7 @@ describe('pho generator', function () {
       'dist/',
       'src/',
       'src/images',
-      'src/sprites'
+      'src/images/sprites'
     ];
 
     helpers.mockPrompt(this.app, {
