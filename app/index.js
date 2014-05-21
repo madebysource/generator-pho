@@ -68,20 +68,15 @@ var Generator = yeoman.generators.Base.extend({
 
     var prompts = [];
 
+    this.angular = false;
+
     if (this.type === 'Web Application (angular)') {
+      this.angular = true;
       prompts = [
         {
           type: 'confirm',
-          name: 'angular',
-          message: 'angular'
-        },
-        {
-          type: 'confirm',
           name: 'tests',
-          message: 'tests',
-          when: function(props) {
-            return props.angular;
-          }
+          message: 'tests'
         },
         {
           type: 'confirm',
@@ -103,7 +98,6 @@ var Generator = yeoman.generators.Base.extend({
     }
 
     this.prompt(prompts, function(props) {
-      this.angular = props.angular;
       this.tests = props.tests;
       this.unit = props.unit;
       this.e2e = props.e2e;
