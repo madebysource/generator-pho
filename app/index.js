@@ -120,7 +120,7 @@ var Generator = yeoman.generators.Base.extend({
     this.copy('_bower.json', 'bower.json');
     this.copy('substitute-config.js', 'substitute-config.js');
     this.copy('_package.json', 'package.json');
-    this.copy('humans.txt', 'humans.txt');
+    this.copy('src/humans.txt', 'src/humans.txt');
   },
 
   app: function() {

@@ -38,7 +38,9 @@ require('pho-devstack')(gulp, {
   },
   substituter: extend(true, substituteConfig, {
     // cdn: 'http://example.com' // url to your cdn server
-  })
+  }),
+
+  copy: ['humans.txt']
 });
 
 // If needed, redefine tasks here

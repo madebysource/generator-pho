@@ -16,7 +16,7 @@ require('pho-devstack')(gulp, {
     }
   }),
 
-  copy: ['images/sprites/**/*']
+  copy: ['images/sprites/**/*', 'humans.txt']
 });
 
 // If needed, redefine tasks here
