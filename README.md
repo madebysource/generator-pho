@@ -2,13 +2,13 @@
 
 > Project generator that includes [pho-devstack][pho-devstack]
 
-## Status
-
-This software is in stabilization phase. We've used it in [Source][Source] and [Abdoc][Abdoc] for some months now. We're currently working mainly on documentation and website.
-
 ## Installation
 
 See installation instructions at [pho-devstack repository][pho-devstack].
+
+## Status
+
+This software is in stabilization phase. We've used it in [Source][Source] and [Abdoc][Abdoc] for some months now. We're currently working mainly on documentation and website.
 
 
 ## License
