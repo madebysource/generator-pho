@@ -10,7 +10,7 @@ See installation instructions at [pho-devstack repository][pho-devstack].
 
 ## Status
 
-This software is in stabilization phase. We've used it in [Source][Source] and [Abdoc][Abdoc] for some months now. We're currently working mainly on documentation and website.
+This software should be stable. We've used it in [Source][Source] for all new landing pages and in [abdoc][Abdoc] for all new client projects since February 2014.
 
 
 ## License
