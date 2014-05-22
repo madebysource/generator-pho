@@ -1,3 +1,5 @@
+![](http://pho.madebysource.com/images/generator-screenshot.png)
+
 # generator-pho [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]
 
 > Project generator that includes [pho-devstack][pho-devstack]
