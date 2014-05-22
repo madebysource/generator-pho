@@ -9,15 +9,21 @@
   },
   "bugs": "https://github.com/madebysource/generator-pho/issues",
   "keywords": [
+    "yeoman-generator",
+    "scaffold",
+    "web",
+    "app",
+    "front-end",
+    "gulp",
+    "browserify",
+    "less",
+    "css",
+    "lesshat",
+    "angularjs",
     "jasmine",
     "lint",
-    "app",
-    "angular",
-    "front-end",
-    "scaffold",
     "tdd",
-    "testing",
-    "yeoman-generator"
+    "testing"
   ],
   "author": "Pavel Gavlík <pavelgavlik@abdoc.net>",
   "contributors": [
