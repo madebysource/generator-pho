@@ -111,6 +111,7 @@ var Generator = yeoman.generators.Base.extend({
     this.copy('gitignore', '.gitignore');
     this.copy('editorconfig', '.editorconfig');
     this.copy('jshintrc', '.jshintrc');
+    this.copy('jscsrc', '.jscsrc');
     this.copy('_bower.json', 'bower.json');
     this.copy('substitute-config.js', 'substitute-config.js');
     this.copy('_package.json', 'package.json');
