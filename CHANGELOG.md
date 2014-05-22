@@ -1,4 +1,4 @@
-<a name="1.0.0-beta.1"></a>
+<a name="1.0.0-alpha.1"></a>
 # 1.0.0-alpha.1 (2014-05-21)
 
 - Generator options (Landing page/Webapp, tests, meta tags, Google Analytics, LESS structure)
