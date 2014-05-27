@@ -1,3 +1,9 @@
+<a name="1.1.0"></a>
+# 1.1.0 (2014-05-27)
+
+- Add `npm start` script for default project
+- Fix: Dist version referencing src
+
 <a name="1.0.0"></a>
 # 1.0.0 (2014-05-22)
 
