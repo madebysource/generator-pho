@@ -16,7 +16,7 @@ require('pho-devstack')(gulp, {
     }
   }),
 
-  copy: ['images/sprites/**/*', 'humans.txt']
+  copy: ['images/sprites/**/*', 'humans.txt'<% if (angular) { %>, 'bower_components/angular/**/*.{js,map}'<% } %>]
 });
 
 // If needed, redefine tasks here

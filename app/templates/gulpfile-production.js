@@ -40,7 +40,7 @@ require('pho-devstack')(gulp, {
     // cdn: 'http://example.com' // url to your cdn server
   }),
 
-  copy: ['humans.txt']
+  copy: ['humans.txt'<% if (angular) { %>, 'bower_components/angular/**/*.{js,map}'<% } %>]
 });
 
 // If needed, redefine tasks here
