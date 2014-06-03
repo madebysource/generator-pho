@@ -33,13 +33,13 @@ require('pho-devstack')(gulp, {
     prefix: '../images/sprites/' // change this to prefix path before sprites. '/images/sprites/' for absolute paths
   },
   base64: {
-    enabled: true,
-    // baseDir: 'src' // uncomment if you are using absolute paths
+    // baseDir: 'src', // uncomment if you are using absolute paths
+    enabled: true
   },
   substituter: extend(true, substituteConfig, {
-    // cdn: 'http://example.com' // url to your cdn server
+    // cdn: 'http://example.com' // url to your CDN server
+    // cdn: '/', // uncomment if you are using absolute paths without CDN
   }),
-
   copy: ['humans.txt'<% if (angular) { %>, 'bower_components/angular/**/*.{js,map}'<% } %>]
 });
 
