@@ -32,6 +32,7 @@ describe('pho generator', function () {
       'gulpfile.js',
       'gulpfile-production.js',
       'package.json',
+      'post-deploy.sh',
       'karma.conf.js',
       'src/index.html',
       'src/scripts/main.js',

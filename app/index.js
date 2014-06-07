@@ -114,6 +114,7 @@ var Generator = yeoman.generators.Base.extend({
     this.copy('jscsrc', '.jscsrc');
     this.copy('_bower.json', 'bower.json');
     this.copy('substitute-config.js', 'substitute-config.js');
+    this.copy('post-deploy.sh', 'post-deploy.sh');
     this.copy('_package.json', 'package.json');
     this.copy('src/humans.txt', 'src/humans.txt');
   },

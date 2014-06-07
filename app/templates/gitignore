@@ -3,3 +3,6 @@ Thumbs.db
 
 node_modules
 src/bower_components
+
+deploy
+dist
