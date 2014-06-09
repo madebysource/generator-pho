@@ -1,3 +1,12 @@
+<a name="1.2.0"></a>
+# 1.2.0 (2014-06-10)
+
+- Add Sass support
+- Add Sass version of directory structure
+- Add sample autodeploy script
+- Remove Less Hat from repository (it's in Bower)
+- Add more comprehensive tests
+
 <a name="1.1.0"></a>
 # 1.1.0 (2014-05-27)
 
