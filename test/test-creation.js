@@ -15,6 +15,8 @@ describe('pho generator', function () {
       this.app = helpers.createGenerator('pho:app', [
         '../../app'
       ]);
+      this.app.options['skip-install'] = true;
+
       done();
     }.bind(this));
   });
@@ -52,10 +54,68 @@ describe('pho generator', function () {
       'tests': true,
       'e2e': true,
       'unit': true,
-      'type': 'Web Application'
+      'type': 'Web Application',
+      'stylesPreprocessor': 'Less'
     });
 
-    this.app.options['skip-install'] = true;
+    this.app.run({}, function () {
+      helpers.assertFile(expected);
+      done();
+    });
+  });
+
+  it('creates Less directory structure', function (done) {
+    var expected = [
+      'src/styles/animations.less',
+      'src/styles/helpers.less',
+      'src/styles/main.less',
+      'src/styles/base/fonts.less',
+      'src/styles/base/global.less',
+      'src/styles/base/links.less',
+      'src/styles/base/normalize.less',
+      'src/styles/components/column.less',
+      'src/styles/components/component.less',
+      'src/styles/modules/module.less',
+    ];
+
+    helpers.mockPrompt(this.app, {
+      'tests': true,
+      'e2e': true,
+      'unit': true,
+      'type': 'Web Application',
+      'stylesPreprocessor': 'Less',
+      'baseStyleStructure': true
+    });
+
+    this.app.run({}, function () {
+      helpers.assertFile(expected);
+      done();
+    });
+  });
+
+  it('creates Sass directory structure', function (done) {
+    var expected = [
+      'sass-support.js',
+      'src/styles/animations.scss',
+      'src/styles/helpers.scss',
+      'src/styles/main.scss',
+      'src/styles/base/fonts.scss',
+      'src/styles/base/global.scss',
+      'src/styles/base/links.scss',
+      'src/styles/base/normalize.scss',
+      'src/styles/components/column.scss',
+      'src/styles/components/component.scss',
+      'src/styles/modules/module.scss',
+    ];
+
+    helpers.mockPrompt(this.app, {
+      'tests': true,
+      'e2e': true,
+      'unit': true,
+      'type': 'Web Application',
+      'stylesPreprocessor': 'Sass',
+      'baseStyleStructure': true
+    });
 
     this.app.run({}, function () {
       helpers.assertFile(expected);

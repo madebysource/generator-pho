@@ -1,8 +1,7 @@
 /*
- * fonts.less
- *  - this file contains definitions for all global font properties
+ * Definitions for all global font properties
  */
-
+<% if (less) { %>
 @font_family: 'Helvetica Neue', sans-serif;
 @font_size: 16px;
 @font_color: #010101;
@@ -12,7 +11,17 @@ body {
   font-size: @font_size;
   color: @font_color;
 }
+<% } if (sass) { %>
+$font_family: 'Helvetica Neue', sans-serif;
+$font_size: 16px;
+$font_color: #010101;
 
+body {
+  font-family: $font_family;
+  font-size: $font_size;
+  color: $font_color;
+}
+<% } %>
 p {
   line-height: 22px;
 }

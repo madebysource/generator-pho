@@ -38,26 +38,35 @@ var Generator = yeoman.generators.Base.extend({
 
     var prompts = [
       {
-        type: 'confirm',
-        name: 'metatags',
-        message: 'Should I generate meta tags for social networks?'
-      },
-      {
-        type: 'confirm',
-        name: 'analytics',
-        message: 'Do you want to include Google Analytics code?'
+        type: 'list',
+        name: 'stylesPreprocessor',
+        message: 'Which preprocessor do you use?',
+        choices: ['Less', 'Sass']
       },
       {
         type: 'confirm',
         name: 'baseStyleStructure',
-        message: 'Will you use LESS directory structure based on SMACSS?'
+        message: 'Will you use styles directory structure based on SMACSS?'
+      },
+      {
+        type: 'confirm',
+        name: 'metatags',
+        message: 'Do you want to include meta tags for social networks?'
+      },
+      {
+        type: 'confirm',
+        name: 'analytics',
+        message: 'Should I generate Google Analytics code?'
       }
     ];
 
     this.prompt(prompts, function(props) {
+      this.less = props.stylesPreprocessor === 'Less';
+      this.sass = props.stylesPreprocessor === 'Sass';
+
+      this.baseStyleStructure = props.baseStyleStructure;
       this.metatags = props.metatags;
       this.analytics = props.analytics;
-      this.baseStyleStructure = props.baseStyleStructure;
 
       cb();
     }.bind(this));
@@ -137,20 +146,29 @@ var Generator = yeoman.generators.Base.extend({
   },
 
   styles: function() {
-    this.copy('src/styles/main.less', 'src/styles/main.less');
+    var ext;
+    
+    if (this.less) {
+      ext = 'less';
+    }
+    else if (this.sass) {
+      ext = 'scss';
+      this.copy('sass-support.js', 'sass-support.js');
+    }
+    
+    this.copy('src/styles/main.less', 'src/styles/main.' + ext);
 
     if (this.baseStyleStructure) {
-      this.copy('src/styles/base/fonts.less', 'src/styles/base/fonts.less');
-      this.copy('src/styles/base/global.less', 'src/styles/base/global.less');
-      this.copy('src/styles/base/links.less', 'src/styles/base/links.less');
-      this.copy('src/styles/base/normalize.less', 'src/styles/base/normalize.less');
-      this.copy('src/styles/components/column.less', 'src/styles/components/column.less');
-      this.copy('src/styles/components/component.less', 'src/styles/components/component.less');
-      this.copy('src/styles/modules/module.less', 'src/styles/modules/module.less');
-      this.copy('src/styles/animations.less', 'src/styles/animations.less');
-      this.copy('src/styles/helpers.less', 'src/styles/helpers.less');
-      this.copy('src/styles/lesshat.less', 'src/styles/lesshat.less');
-      this.copy('src/styles/main.less', 'src/styles/main.less');
+      this.copy('src/styles/base/fonts.less', 'src/styles/base/fonts.' + ext);
+      this.copy('src/styles/base/global.less', 'src/styles/base/global.' + ext);
+      this.copy('src/styles/base/links.less', 'src/styles/base/links.' + ext);
+      this.copy('src/styles/base/normalize.css', 'src/styles/base/normalize.' + ext);
+      this.copy('src/styles/components/column.less', 'src/styles/components/column.' + ext);
+      this.copy('src/styles/components/component.less', 'src/styles/components/component.' + ext);
+      this.copy('src/styles/modules/module.less', 'src/styles/modules/module.' + ext);
+      this.copy('src/styles/animations.less', 'src/styles/animations.' + ext);
+      this.copy('src/styles/helpers.less', 'src/styles/helpers.' + ext);
+      this.copy('src/styles/main.less', 'src/styles/main.' + ext);
     }
   },
 

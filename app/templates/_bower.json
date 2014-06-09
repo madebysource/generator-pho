@@ -1,9 +1,8 @@
 {
-  "name": "package",
+  "name": "<%= _.slugify(appname) %>",
   "version": "0.0.0",
-  "dependencies": {<% if (angular) { %>
-    "angular": "~1.2.9",<% } %>
-    "lesshat": "~3.0.0"
+  "dependencies": {
+    <% if (angular) { %>"angular": "~1.2.9",
+    <% } if (less) { %>"lesshat": "~3.0.0"<% } %>
   }
 }
-

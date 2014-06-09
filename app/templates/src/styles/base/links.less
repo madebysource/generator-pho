@@ -1,21 +1,21 @@
 /*
- * links.less
- *  - defines global link rules
+ * Defines global link rules
  */
-
 
 a[href] {
   display: inline-block;
   text-decoration: none;
   border-bottom: 1px solid;
-  .transition(color 200ms, border-color 200ms);
-
+  <%   if (less) { %>.transition(color 200ms, border-color 200ms);
+  <% } if (sass) { %>transition: color 200ms, border-color 200ms;
+  <% } %>
   &:hover {
     border-color: transparent;
   }
 
   &:active {
-    .translateY(1px);
+    <% if (less) { %>.translateY(1px);<% } %>
+    <% if (sass) { %>transition: color 200ms, border-color 200ms;<% } %>
   }
 }
 

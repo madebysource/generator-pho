@@ -1,34 +1,32 @@
 <% if (baseStyleStructure) { %>/*
- * main.less
- *  - This file includes all your components and modules. It shouldn’t contain any
- *    CSS rules.
- *  - Based on ’SMACSS’ (Scalable and Modular Architecture for CSS). Read more at
- *    [http://smacss.com/]
+ * This file includes all your components and modules. It shouldn’t contain any
+ * CSS rules.
+ * Based on ’SMACSS’ (Scalable and Modular Architecture for CSS). Read more at
+ * [http://smacss.com/]
  *
- *  - Base:
- *    - reset
+ * - Base:
+ *   - reset
  *
- *  - Component:
- *    - main idea: component is a reusable page element
- *    - all your buttons, form inputs,…
+ * - Component:
+ *   - main idea: component is a reusable page element
+ *   - all your buttons, form inputs,…
  *
- *  - Module:
- *    - bigger page block, *uses components*, *defines the final component layout*,
- *      *not always* reusable
- *    - footer, header, user profile,…
+ * - Module:
+ *   - bigger page block, *uses components*, *defines the final component layout*,
+ *     *not always* reusable
+ *   - footer, header, user profile,…
  */
 
-
-/*
- * Import Less Hat mixin library
- */
-@import "lesshat";
 @import "helpers";
 
+/*
+ * Import Bower components (include path is predefined)
+ */
+<% if (less) { %>@import "lesshat/build/lesshat";<% } %>
 
 /*
- * Base
- */
+* Base
+*/
 @import "base/normalize";
 @import "base/global";
 @import "base/fonts";
@@ -36,13 +34,13 @@
 
 
 /*
- * Components
- */
+* Components
+*/
 @import "components/column";
 
 
 /*
- * Modules
- */
+* Modules
+*/
 @import "modules/module";
 <% } %>

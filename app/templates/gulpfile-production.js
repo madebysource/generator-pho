@@ -1,22 +1,26 @@
 // For all available options, see node_modules/pho-dev-stack/config.js
 // These are production build settings, see gulpfile.js for development settings
-var gulp = require('gulp');
 
+var gulp = require('gulp');
 var extend = require('node.extend');
 var substituteConfig = require('./substitute-config');
 
-require('pho-devstack')(gulp, {
-  browserify: {
+var pho = require('pho-devstack')(gulp, {<% if (sass) { %>
+  <% if (sass) { %>src: {
+    styleMain: 'main.scss',
+    styleFiles: '**/*.scss'
+  },
+  <% } %>browserify: {
     debug: false,
     transforms: {
       "browserify-ngmin": true,
       uglifyify: true
     }
   },
-  less: {
+  <% if (less) { %>less: {
     sourceMap: false
   },
-  livereload: {
+  <% } %>livereload: {
     enabled: false
   },
   plumber: {
@@ -44,3 +48,6 @@ require('pho-devstack')(gulp, {
 });
 
 // If needed, redefine tasks here
+<% if (sass) { %>
+require('./sass-support')(pho);
+<% } %>
