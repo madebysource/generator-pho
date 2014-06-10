@@ -1,4 +1,4 @@
-![](http://pho.madebysource.com/images/generator-screenshot.png)
+![](http://pho.madebysource.com/images/generator-screenshot.png?)
 
 # generator-pho [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]
 
