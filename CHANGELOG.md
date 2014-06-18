@@ -1,3 +1,8 @@
+<a name="1.2.1"></a>
+# 1.2.1 (2014-06-18)
+
+- Fix bug that generated bad production gulpfile
+
 <a name="1.2.0"></a>
 # 1.2.0 (2014-06-10)
 
