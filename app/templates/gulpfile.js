@@ -23,6 +23,5 @@ var pho = require('pho-devstack')(gulp, {
 });
 
 // If needed, redefine tasks here
-<% if (sass) { %>
-require('./sass-support')(pho);
+<% if (sass) { %>require('./sass-support')(pho);
 <% } %>

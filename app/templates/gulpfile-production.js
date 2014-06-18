@@ -1,14 +1,14 @@
-// For all available options, see node_modules/pho-dev-stack/config.js
+// For all available options, see node_modules/pho-devstack/config.js
 // These are production build settings, see gulpfile.js for development settings
 
 var gulp = require('gulp');
 var extend = require('node.extend');
 var substituteConfig = require('./substitute-config');
 
-var pho = require('pho-devstack')(gulp, {<% if (sass) { %>
+var pho = require('pho-devstack')(gulp, {
   <% if (sass) { %>src: {
-    styleMain: 'main.scss',
-    styleFiles: '**/*.scss'
+    styleMain: 'main.{scss,sass}',
+    styleFiles: '**/*.{scss,sass}'
   },
   <% } %>browserify: {
     debug: false,
@@ -48,6 +48,5 @@ var pho = require('pho-devstack')(gulp, {<% if (sass) { %>
 });
 
 // If needed, redefine tasks here
-<% if (sass) { %>
-require('./sass-support')(pho);
+<% if (sass) { %>require('./sass-support')(pho);
 <% } %>
