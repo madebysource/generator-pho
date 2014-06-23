@@ -5,6 +5,16 @@ var path    = require('path');
 var helpers = require('yeoman-generator').test;
 
 
+function testDependencyFilesValidity() {
+  function tryToParse(module) {
+    delete require.cache[require.resolve(module)];
+    require(module);
+  }
+
+  tryToParse('./temp/bower.json');
+  tryToParse('./temp/package.json');
+}
+
 describe('pho generator', function () {
   beforeEach(function (done) {
     helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
@@ -64,7 +74,31 @@ describe('pho generator', function () {
     });
   });
 
-  it('creates Less directory structure', function (done) {
+  it ('creates Landing page with Less', function (done) {
+    helpers.mockPrompt(this.app, {
+      'type': 'Landing Page',
+      'stylesPreprocessor': 'Less'
+    });
+
+    this.app.run({}, function () {
+      testDependencyFilesValidity();
+      done();
+    });
+  });
+
+  it ('creates Landing page with Sass', function (done) {
+    helpers.mockPrompt(this.app, {
+      'type': 'Landing Page',
+      'stylesPreprocessor': 'Sass'
+    });
+
+    this.app.run({}, function () {
+      testDependencyFilesValidity();
+      done();
+    });
+  });
+
+  it('creates Web app with Less directory structure', function (done) {
     var expected = [
       'src/styles/animations.less',
       'src/styles/helpers.less',
@@ -89,11 +123,12 @@ describe('pho generator', function () {
 
     this.app.run({}, function () {
       helpers.assertFile(expected);
+      testDependencyFilesValidity();
       done();
     });
   });
 
-  it('creates Sass directory structure', function (done) {
+  it('creates Web app with Sass directory structure', function (done) {
     var expected = [
       'sass-support.js',
       'src/styles/animations.scss',
@@ -119,6 +154,7 @@ describe('pho generator', function () {
 
     this.app.run({}, function () {
       helpers.assertFile(expected);
+      testDependencyFilesValidity();
       done();
     });
   });

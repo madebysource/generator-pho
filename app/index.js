@@ -22,7 +22,7 @@ var Generator = yeoman.generators.Base.extend({
         type: 'list',
         name: 'type',
         message: 'Select your project type:',
-        choices: ['Landing page', 'Web Application']
+        choices: ['Landing Page', 'Web Application']
       }
     ];
 
