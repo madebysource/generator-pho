@@ -1,3 +1,8 @@
+<a name="1.2.2"></a>
+# 1.2.2 (2014-06-23)
+
+- Fix generating bower.json (additional commas were inserted)
+
 <a name="1.2.1"></a>
 # 1.2.1 (2014-06-18)
 
