@@ -39,7 +39,7 @@ var Generator = yeoman.generators.Base.extend({
     var prompts = [
       {
         type: 'list',
-        name: 'stylesPreprocessor',
+        name: 'cssPreprocessor',
         message: 'Which preprocessor do you use?',
         choices: ['Less', 'Sass']
       },
@@ -57,12 +57,19 @@ var Generator = yeoman.generators.Base.extend({
         type: 'confirm',
         name: 'analytics',
         message: 'Should I generate Google Analytics code?'
+      },
+      {
+        type: 'list',
+        name: 'javascriptTranspiler',
+        message: 'Which JavaScript transpiler do you use?',
+        choices: ['None', 'CoffeeScript']
       }
     ];
 
     this.prompt(prompts, function(props) {
-      this.less = props.stylesPreprocessor === 'Less';
-      this.sass = props.stylesPreprocessor === 'Sass';
+      this.less = props.cssPreprocessor === 'Less';
+      this.sass = props.cssPreprocessor === 'Sass';
+      this.coffee = props.javascriptTranspiler === 'CoffeeScript';
 
       this.baseStyleStructure = props.baseStyleStructure;
       this.metatags = props.metatags;
@@ -117,31 +124,38 @@ var Generator = yeoman.generators.Base.extend({
 
   projectFiles: function() {
     this.copy('bowerrc', '.bowerrc');
-    this.copy('gitignore', '.gitignore');
     this.copy('editorconfig', '.editorconfig');
+    this.copy('gitignore', '.gitignore');
     this.copy('jshintrc', '.jshintrc');
     this.copy('jscsrc', '.jscsrc');
     this.copy('_bower.json', 'bower.json');
-    this.copy('substitute-config.js', 'substitute-config.js');
-    this.copy('post-deploy.sh', 'post-deploy.sh');
-    this.copy('_package.json', 'package.json');
-    this.copy('src/humans.txt', 'src/humans.txt');
-  },
-
-  app: function() {
-    this.mkdir('src/images/sprites');
-    this.mkdir('dist');
-
-    this.copy('src/scripts/main.js', 'src/scripts/main.js');
-
     this.copy('gulpfile.js', 'gulpfile.js');
     this.copy('gulpfile-production.js', 'gulpfile-production.js');
-
+    this.copy('_package.json', 'package.json');
+    this.copy('post-deploy.sh', 'post-deploy.sh');
+    this.copy('substitute-config.js', 'substitute-config.js');
+    this.copy('src/humans.txt', 'src/humans.txt');
     this.template('src/index.html', 'src/index.html');
 
+    this.mkdir('src/images/sprites');
+    this.mkdir('dist');
+  },
+
+  scripts: function() {
+    var ext;
+
+    if (this.coffee) {
+      ext = 'coffee';
+    }
+    else {
+      ext = 'js';
+    }
+
+    this.copy('src/scripts/main.' + ext, 'src/scripts/main.' + ext);
+
     if (this.angular) {
-      this.copy('src/scripts/home/index.js', 'src/scripts/home/index.js');
-      this.copy('src/scripts/home/HomeCtrl.js', 'src/scripts/home/HomeCtrl.js');
+      this.copy('src/scripts/home/index.' + ext, 'src/scripts/home/index.' + ext);
+      this.copy('src/scripts/home/HomeCtrl.' + ext, 'src/scripts/home/HomeCtrl.' + ext);
     }
   },
 

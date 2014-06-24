@@ -65,7 +65,7 @@ describe('pho generator', function () {
       'e2e': true,
       'unit': true,
       'type': 'Web Application',
-      'stylesPreprocessor': 'Less'
+      'cssPreprocessor': 'Less'
     });
 
     this.app.run({}, function () {
@@ -77,7 +77,7 @@ describe('pho generator', function () {
   it ('creates Landing page with Less', function (done) {
     helpers.mockPrompt(this.app, {
       'type': 'Landing Page',
-      'stylesPreprocessor': 'Less'
+      'cssPreprocessor': 'Less'
     });
 
     this.app.run({}, function () {
@@ -89,7 +89,7 @@ describe('pho generator', function () {
   it ('creates Landing page with Sass', function (done) {
     helpers.mockPrompt(this.app, {
       'type': 'Landing Page',
-      'stylesPreprocessor': 'Sass'
+      'cssPreprocessor': 'Sass'
     });
 
     this.app.run({}, function () {
@@ -98,7 +98,7 @@ describe('pho generator', function () {
     });
   });
 
-  it('creates Web app with Less directory structure', function (done) {
+  it('creates Web app with Less directory structure and CoffeeScript', function (done) {
     var expected = [
       'src/styles/animations.less',
       'src/styles/helpers.less',
@@ -110,14 +110,15 @@ describe('pho generator', function () {
       'src/styles/components/column.less',
       'src/styles/components/component.less',
       'src/styles/modules/module.less',
+      'src/scripts/main.coffee',
+      'src/scripts/home/index.coffee',
+      'src/scripts/home/HomeCtrl.coffee'
     ];
 
     helpers.mockPrompt(this.app, {
-      'tests': true,
-      'e2e': true,
-      'unit': true,
       'type': 'Web Application',
-      'stylesPreprocessor': 'Less',
+      'cssPreprocessor': 'Less',
+      'javascriptTranspiler': 'CoffeeScript',
       'baseStyleStructure': true
     });
 
@@ -144,11 +145,8 @@ describe('pho generator', function () {
     ];
 
     helpers.mockPrompt(this.app, {
-      'tests': true,
-      'e2e': true,
-      'unit': true,
       'type': 'Web Application',
-      'stylesPreprocessor': 'Sass',
+      'cssPreprocessor': 'Sass',
       'baseStyleStructure': true
     });
 

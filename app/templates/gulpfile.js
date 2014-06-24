@@ -6,9 +6,20 @@ var extend = require('node.extend');
 var substituteConfig = require('./substitute-config');
 
 var pho = require('pho-devstack')(gulp, {
-  <% if (sass) { %>src: {
-    styleMain: 'main.{scss,sass}',
-    styleFiles: '**/*.{scss,sass}'
+  <% if (coffee || sass) { %>src: {
+    <% if (sass) { %>styleMain: 'main.{scss,sass}',
+    styleFiles: '**/*.{scss,sass}'<% } if (coffee && sass) { %>,<% } %>
+    <% if (coffee) { %>scriptMain: 'main.coffee',
+    scriptFiles: '**/*.coffee'
+  },
+  dist: {
+    scriptMain: 'main.js',<% } %>
+  },
+  <% } if (coffee) { %>browserify: {
+    extensions: ['.coffee'],
+    transforms: {
+      coffeeify: true
+    }
   },
   <% } %>imagemin: {
     enabled: false
