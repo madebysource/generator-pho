@@ -1,3 +1,9 @@
+<a name="1.4.0"></a>
+# 1.4.0 (2014-08-18)
+
+- Add meta tag for initialization of viewport
+- Add meta tag for IE edge mode
+
 <a name="1.3.0"></a>
 # 1.3.0 (2014-06-24)
 
