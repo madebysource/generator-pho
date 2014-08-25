@@ -17,7 +17,7 @@
     "gulp": "~3.8.0",
     <% if (sass) { %>"gulp-sass": "~0.7.2",
     <% } if (coffee) { %>"coffeeify": "~0.6.0",
-    <% } %>"pho-devstack": "~1.4.0",
+    <% } %>"pho-devstack": "~1.5.0",
     "node.extend": "~1.0.10"
   },
   "scripts": {
