@@ -27,7 +27,7 @@ var pho = require('pho-devstack')(gulp, {
   substituter: extend(true, substituteConfig, {
     // cdn: '/', // uncomment if you are using absolute paths
     livereload: function() {
-      var liveReloadPort = pho.config.livereload;
+      var liveReloadPort = pho.config.livereload.port;
       return "<script>document.write('<script src=\"http://' + (location.host || 'localhost').split(':')[0] + ':" + liveReloadPort + "/livereload.js?snipver=1\"></' + 'script>')</script>";
     }
   }),
