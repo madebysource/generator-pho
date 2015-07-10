@@ -28,6 +28,7 @@ var Generator = yeoman.generators.Base.extend({
 
     this.prompt(prompts, function(props) {
       this.type = props.type;
+      this.angular = this.type === 'Web Application';
 
       cb();
     }.bind(this));
@@ -79,49 +80,6 @@ var Generator = yeoman.generators.Base.extend({
     }.bind(this));
   },
 
-  askForAngular: function() {
-    var cb = this.async();
-
-    var prompts = [];
-
-    this.angular = false;
-
-    if (this.type === 'Web Application') {
-      this.angular = true;
-      prompts = [
-        {
-          type: 'confirm',
-          name: 'tests',
-          message: 'Do you want to include tests?'
-        },
-        {
-          type: 'confirm',
-          name: 'unit',
-          message: 'Should I set up unit testing with Jasmine?',
-          when: function(props) {
-            return props.tests;
-          }
-        },
-        {
-          type: 'confirm',
-          name: 'e2e',
-          message: 'Will you use end to end testing (using CasperJS) as well?',
-          when: function(props) {
-            return props.tests;
-          }
-        }
-      ];
-    }
-
-    this.prompt(prompts, function(props) {
-      this.tests = props.tests;
-      this.unit = props.unit;
-      this.e2e = props.e2e;
-
-      cb();
-    }.bind(this));
-  },
-
   projectFiles: function() {
     this.copy('bowerrc', '.bowerrc');
     this.copy('editorconfig', '.editorconfig');
@@ -161,7 +119,7 @@ var Generator = yeoman.generators.Base.extend({
 
   styles: function() {
     var ext;
-    
+
     if (this.less) {
       ext = 'less';
     }
@@ -169,7 +127,7 @@ var Generator = yeoman.generators.Base.extend({
       ext = 'scss';
       this.copy('sass-support.js', 'sass-support.js');
     }
-    
+
     this.copy('src/styles/main.less', 'src/styles/main.' + ext);
 
     if (this.baseStyleStructure) {
@@ -183,24 +141,6 @@ var Generator = yeoman.generators.Base.extend({
       this.copy('src/styles/animations.less', 'src/styles/animations.' + ext);
       this.copy('src/styles/helpers.less', 'src/styles/helpers.' + ext);
       this.copy('src/styles/main.less', 'src/styles/main.' + ext);
-    }
-  },
-
-  tests: function() {
-    if (this.e2e || this.unit) {
-      this.mkdir('spec');
-
-      if (this.e2e) {
-        this.mkdir('spec/e2e');
-        this.copy('spec/e2e/example.js', 'spec/e2e/example.js');
-      }
-
-      if (this.unit) {
-        this.copy('karma.conf.js', 'karma.conf.js');
-
-        this.mkdir('spec/unit');
-        this.copy('spec/unit/exampleSpec.js', 'spec/unit/exampleSpec.js');
-      }
     }
   }
 });

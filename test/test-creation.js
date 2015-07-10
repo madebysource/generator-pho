@@ -45,14 +45,11 @@ describe('pho generator', function () {
       'gulpfile-production.js',
       'package.json',
       'post-deploy.sh',
-      'karma.conf.js',
       'src/index.html',
       'src/scripts/main.js',
       'src/scripts/home/index.js',
       'src/scripts/home/HomeCtrl.js',
       'src/styles/main.less',
-      'spec/e2e/example.js',
-      'spec/unit/exampleSpec.js',
 
       'dist/',
       'src/',
@@ -141,7 +138,7 @@ describe('pho generator', function () {
       'src/styles/base/normalize.scss',
       'src/styles/components/column.scss',
       'src/styles/components/component.scss',
-      'src/styles/modules/module.scss',
+      'src/styles/modules/module.scss'
     ];
 
     helpers.mockPrompt(this.app, {
