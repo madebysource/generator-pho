@@ -14,17 +14,20 @@ var pho = require('pho-devstack')(gulp, {
   },
   <% } %>browserify: {
     debug: false,
-    <% if (coffee) { %>extensions: ['.coffee'],
-    <% } %>transforms: {
-      <% if (coffee) { %>coffeeify: true,
-      <% } %>"browserify-ngmin": true,
-      uglifyify: true
-    }
+    <% if (coffee) { %>extensions: ['.coffee']
+  },
+  base64: {
+    // baseDir: 'src', // uncomment if you are using absolute paths
+    enabled: true
   },
   <% if (less) { %>less: {
     sourceMap: false
   },
-  <% } %>livereload: {
+  <% } %>ngAnnotate: {
+    /* Rewrites AngularJS code to be minification-proof */
+    enabled: false
+  },
+  livereload: {
     enabled: false
   },
   plumber: {
@@ -33,21 +36,20 @@ var pho = require('pho-devstack')(gulp, {
   rename: {
     enabled: true
   },
-  watch: {
-    enabled: false
-  },
   spritesPreprocessor: {
     enabled: true,
     prefix: '../images/sprites/' // change this to prefix path before sprites. '/images/sprites/' for absolute paths
-  },
-  base64: {
-    // baseDir: 'src', // uncomment if you are using absolute paths
-    enabled: true
   },
   substituter: extend(true, substituteConfig, {
     // cdn: 'http://example.com' // url to your CDN server
     // cdn: '/', // uncomment if you are using absolute paths without CDN
   }),
+  uglify: {
+    enabled: true
+  },
+  watch: {
+    enabled: false
+  },
   copy: ['humans.txt'<% if (angular) { %>, 'bower_components/angular/**/*.{js,map}'<% } %>]
 });
 
